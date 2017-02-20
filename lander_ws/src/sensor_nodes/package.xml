@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <package>
-  <name>controller_node</name>
+  <name>sensor_nodes</name>
   <version>1.0.0</version>
-  <description>The central controller for a BOTR Lander</description>
-  
+  <description>ROS Sensor wrapping package for BOTR Lander</description>
+
   <maintainer email="adithyabsk@gmail.com">Adithya Balaji</maintainer>
 
   <license>MIT</license>
@@ -16,10 +16,13 @@
   <build_depend>roscpp</build_depend>
   <build_depend>rospy</build_depend>
   <build_depend>std_msgs</build_depend>
-  <build_depend>nmea_navsat_driver</build_depend>
+  <build_depend>image_transport</build_depend>
+  <build_depend>cv_bridge</build_depend>
 
   <run_depend>roscpp</run_depend>
   <run_depend>rospy</run_depend>
   <run_depend>std_msgs</run_depend>
-  <run_depend>nmea_navsat_driver</run_depend>
-</package>
+  <run_depend>image_transport</run_depend>
+  <run_depend>cv_bridge</run_depend>
+
+  </package>
