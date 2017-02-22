@@ -1,0 +1,4 @@
+bool is_left
+float64 duration
+---
+bool success

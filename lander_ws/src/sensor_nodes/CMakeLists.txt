@@ -8,8 +8,13 @@ add_definitions(-std=c++11 -Wall)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
 	roscpp
+	rospy
+	std_msgs
+	std_srvs
 	cv_bridge
-	image_transport)
+	image_transport
+	message_generation
+)
 
 ## System dependencies are found with CMake's conventions
 # find_package(Boost REQUIRED COMPONENTS system)
@@ -54,11 +59,10 @@ include_directories(${OpenCV_INCLUDE_DIRS})
 # )
 
 ## Generate services in the 'srv' folder
-# add_service_files(
-#   FILES
-#   Service1.srv
-#   Service2.srv
-# )
+add_service_files(
+  FILES
+  Turn.srv
+)
 
 ## Generate actions in the 'action' folder
 # add_action_files(
@@ -68,10 +72,11 @@ include_directories(${OpenCV_INCLUDE_DIRS})
 # )
 
 ## Generate added messages and services with any dependencies listed here
-# generate_messages(
-#   DEPENDENCIES
-#   std_msgs  # Or other packages containing msgs
-# )
+generate_messages(
+  DEPENDENCIES
+  std_msgs
+	std_srvs
+)
 
 ################################################
 ## Declare ROS dynamic reconfigure parameters ##
@@ -105,7 +110,7 @@ include_directories(${OpenCV_INCLUDE_DIRS})
 catkin_package(
 #  INCLUDE_DIRS include
 #  LIBRARIES sensor_nodes
-	CATKIN_DEPENDS roscpp cv_bridge image_transport
+	CATKIN_DEPENDS roscpp rospy std_msgs std_srvs cv_bridge image_transport
 #  DEPENDS system_lib
 )
 
@@ -134,10 +139,10 @@ add_executable(c270_image_publisher_node src/image_publisher.cpp)
 
 ## Add cmake target dependencies of the executable
 ## same as for the library above
-add_dependencies(c270_image_publisher_node
-	{${PROJECT_NAME}_EXPORTED_TARGETS}
-	${catkin_EXPORTED_TARGETS}
-)
+# add_dependencies(c270_image_publisher_node
+# 	{${PROJECT_NAME}_EXPORTED_TARGETS}
+# 	${catkin_EXPORTED_TARGETS}
+# )
 
 ## Specify libraries to link a library or executable target against
 target_link_libraries(c270_image_publisher_node
