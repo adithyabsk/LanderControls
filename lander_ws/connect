@@ -1,0 +1,2 @@
+sudo attach -L slip -s 115200 /dev/ttyUSB0
+sudo ifconfig sl0 10.9.0.10 dstaddr 10.9.0.14
