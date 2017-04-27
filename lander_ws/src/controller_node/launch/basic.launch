@@ -1,0 +1,5 @@
+<launch>
+	<node name="serialrospublisher" pkg="sensor_nodes" type="serialrospublisher.py"/>
+	<node name="c270_image_publisher_node" pkg="sensor_nodes" type="c270_image_publisher_node"/>
+	<include file="$(find controller_node)"/launch/main.launch"/>
+</launch>

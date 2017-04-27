@@ -1,0 +1,14 @@
+[Unit]
+Description=2017 Battle of the Rockets Telemetry Initialization
+
+[Service]
+Type=simple
+WorkingDirectory=/home/ubuntu/LanderControls/lander_ws
+
+ExecStart=/bin/bash -ec "/home/ubuntu/LanderControls/startup.sh"
+
+Restart=on-failure
+
+[Install]
+WantedBy=default.target
+
