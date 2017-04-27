@@ -2,4 +2,5 @@
 	<node name="serialrospublisher" pkg="sensor_nodes" type="serialrospublisher.py"/>
 	<node name="c270_image_publisher_node" pkg="sensor_nodes" type="c270_image_publisher_node"/>
 	<include file="$(find controller_node)"/launch/main.launch"/>
+  <node name="navx_publisher_node" pkg="navx_publisher" type="navx_publisher_node" respawn="true" />
 </launch>
